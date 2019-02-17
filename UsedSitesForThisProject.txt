@@ -1,0 +1,13 @@
+How to set the application.properties
+
+https://spring.io/guides/gs/accessing-data-mysql/
+
+To close unclosed threads
+
+https://docs.microsoft.com/de-de/sysinternals/downloads/tcpview
+
+To avoid the problem that eclipse doesn't terminate the application (tomcat server):
+//The interesting comment is from jordihs on Nov 29, 2017:
+//Add on the JRE tab (Run As -> Maven Build ...) under VM arguments: -Dfork=false
+
+https://github.com/spring-projects/spring-boot/issues/1239
