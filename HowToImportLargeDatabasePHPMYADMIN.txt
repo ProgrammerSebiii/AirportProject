@@ -1,0 +1,14 @@
+The following is a summary of how to import a arbitrary database file using command prompt and XAMPP.
+Credits to https://www.youtube.com/watch?v=kQSFOhaMss0 aka Geeky Cebuana on YouTube for this video/summary
+
+Summary:
+1. Modify the my.ini of the mysql module from the XAMPP Control Panel. The only thing to modify from the my.ini file is the buffer size. Change 8M to whatever value that you want for as long as it is more than the file size that you are trying to import. Then save the changes.
+2. Restart the MySQL module from the XAMPP Control Panel to enable the changes that you made.
+3. Open Command Prompt.
+4. Change your directory to where the bin folder of the mysql module of your XAMPP is located. e.g. "C:\xampp\mysql\bin"
+5.In your command prompt, type in "mysql -u username -p database [less_than_symbol] sql.file"
+**Make sure you are using the less-than symbol to import. Using greater-than symbol will export files. Make sure the database is already created**
+less_than_symbol ... <
+6. Provide username's password
+7. Press enter and wait for a couple of seconds to minutes. It takes longer when file size is huge.
+8. Verify the database if the files are imported.
