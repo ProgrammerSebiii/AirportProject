@@ -32,7 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .invalidateHttpSession(true)
+                .invalidateHttpSession(false)
                 .logoutSuccessUrl("/login.xhtml");
 
         http.authorizeRequests()
@@ -65,8 +65,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         //Configure roles and passwords via datasource
         auth.jdbcAuthentication().dataSource(dataSource)
-                .usersByUsernameQuery("select username, password, enabled from user where username=?")
-                .authoritiesByUsernameQuery("select user_username, roles from user_user_role where user_username=?");
+                .usersByUsernameQuery("select USERNAME, password, enabled from user where USERNAME=?")
+                .authoritiesByUsernameQuery("select USER_USERNAME, ROLES from user_user_role where USER_USERNAME=?");
         // :TODO: use passwordEncoder and do not store passwords in plain text
     }
 
