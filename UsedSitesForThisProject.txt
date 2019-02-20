@@ -19,3 +19,6 @@ https://dev.mysql.com/downloads/windows/installer/8.0.html
 https://help.eclipse.org/luna/rtopic/org.eclipse.datatools.connectivity.doc.user/doc/html/asc1229700344899.html
 https://www.javahelps.com/2015/08/add-mysql-jdbc-driver-to-eclipse.html
 https://www.eclipse.org/webtools/dali/docs/3.2/user_guide/tasks006.htm
+
+HTML Template Greefie
+https://www.drweb.de/kostenlose-hochwertige-xhtml-css-templates/
