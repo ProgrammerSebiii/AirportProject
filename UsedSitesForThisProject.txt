@@ -11,3 +11,11 @@ To avoid the problem that eclipse doesn't terminate the application (tomcat serv
 //Add on the JRE tab (Run As -> Maven Build ...) under VM arguments: -Dfork=false
 
 https://github.com/spring-projects/spring-boot/issues/1239
+
+Generate the JPA annotated entities from the database tables using hibernate tools
+https://rahulvishwakarma.wordpress.com/2014/07/13/generate-the-jpa-annotated-entities-from-the-database-tables-using-hibernate-tools/
+https://github.com/vishwakarmarhl/HibernateTests
+https://dev.mysql.com/downloads/windows/installer/8.0.html
+https://help.eclipse.org/luna/rtopic/org.eclipse.datatools.connectivity.doc.user/doc/html/asc1229700344899.html
+https://www.javahelps.com/2015/08/add-mysql-jdbc-driver-to-eclipse.html
+https://www.eclipse.org/webtools/dali/docs/3.2/user_guide/tasks006.htm
