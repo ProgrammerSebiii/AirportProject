@@ -16,7 +16,32 @@
             </p:panel>
             <p:panel header="JSF 2.2 Bean Access">
                 #{helloWorldBean.hello}
-            </p:panel>
+            </p:panel> 
+        </h:form>
+        <h:form>
+        	<p:dataTable widgetVar="bookingTable"
+				id="bookingTable" var="booking"
+				value="#{bookingController.getBookingsInRange()}"
+				reflow="true" rows="5" paginator="true">
+				<p:column headerText="BookingId">
+					<h:outputText value="#{booking.bookingId}" />
+				</p:column>
+				<p:column headerText="FlightId">
+					<h:outputText value="#{booking.flight.flightId}" />
+					
+				</p:column>
+				<p:column headerText="Price">
+					<h:outputText value="#{booking.price}" />
+				</p:column>
+				<p:column headerText="Passenger">
+					<h:outputText value="#{booking.passenger.passengerId}" />
+				</p:column>
+				
+				<p:column headerText="Seat">
+					<h:outputText value="#{booking.seat}" />
+				</p:column>
+				
+			</p:dataTable>	
         </h:form>
     </ui:define>
 </ui:composition>

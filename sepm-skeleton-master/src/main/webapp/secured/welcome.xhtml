@@ -8,15 +8,61 @@
                 xmlns:p="http://primefaces.org/ui"
                 template="/WEB-INF/templates/main.xhtml">
     <ui:define name ="content">
+    	<p>TEST<br>HALLOHALLO</br></p>
+        <p>FFF</p>
+        <h:outputText value="The following are some custom Queries for testing some things :)" />            
+    
         <h:form>
-            <p:panel header="What do you see here?" >
-                <div style="height:50px">
-                    This is a simple PrimeFaces 6.1 project running on Spring Boot 1.5.8.
-                </div>
-            </p:panel>
-            <p:panel header="JSF 2.2 Bean Access">
-                #{helloWorldBean.hello}
-            </p:panel>
+        	<p:dataTable widgetVar="bookingTable"
+				id="bookingTable" var="booking"
+				value="#{bookingController.doSearchByBookingId()}"
+				reflow="true" rows="5" paginator="true">
+				<p:column headerText="BookingId">
+					<h:outputText value="#{booking.bookingId}" />
+				</p:column>
+				<p:column headerText="FlightId">
+					<h:outputText value="#{booking.flight.flightId}" />
+					
+				</p:column>
+				<p:column headerText="Price">
+					<h:outputText value="#{booking.price}" />
+				</p:column>
+				<p:column headerText="Passenger">
+					<h:outputText value="#{booking.passenger.passengerId}" />
+				</p:column>
+				<p:column headerText="Seat">
+					<h:outputText value="#{booking.seat}" />
+				</p:column>
+				
+			</p:dataTable>	
         </h:form>
+        
+        <h:form>
+        	<p:dataTable widgetVar="bookingTable"
+				id="bookingTable" var="booking"
+				value="#{bookingController.getBookingsInRange()}"
+				reflow="true" rows="20" paginator="true">
+				<p:column headerText="BookingId">
+					<h:outputText value="#{booking.bookingId}" />
+				</p:column>
+				<p:column headerText="FlightId">
+					<h:outputText value="#{booking.flight.flightId}" />
+					
+				</p:column>
+				<p:column headerText="Price">
+					<h:outputText value="#{booking.price}" />
+				</p:column>
+				<p:column headerText="Passenger">
+					<h:outputText value="#{booking.passenger.passengerId}" />
+				</p:column>
+				
+				<p:column headerText="Seat">
+					<h:outputText value="#{booking.seat}" />
+				</p:column>
+				
+			</p:dataTable>	
+        </h:form>
+        
+        
     </ui:define>
 </ui:composition>
