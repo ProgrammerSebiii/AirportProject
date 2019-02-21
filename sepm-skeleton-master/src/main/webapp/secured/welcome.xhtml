@@ -8,12 +8,17 @@
                 xmlns:p="http://primefaces.org/ui"
                 template="/WEB-INF/templates/main.xhtml">
     <ui:define name ="content">
-    	<p>TEST<br>HALLOHALLO</br></p>
-        <p>FFF</p>
-        <h:outputText value="The following are some custom Queries for testing some things :)" />            
-    
-        <h:form>
-        	<p:dataTable widgetVar="bookingTable"
+    	<p></p>
+        <h2> 
+        	<h:outputText value="The following are some custom Queries for testing some things :)" />
+        </h2>
+        
+        <br></br>
+               
+        <h:form id = "query1">
+        	<p:accordionPanel>
+        <p:tab title="Booking with id 260">
+            <p:dataTable widgetVar="bookingTable"
 				id="bookingTable" var="booking"
 				value="#{bookingController.doSearchByBookingId()}"
 				reflow="true" rows="5" paginator="true">
@@ -35,11 +40,11 @@
 				</p:column>
 				
 			</p:dataTable>	
-        </h:form>
-        
-        <h:form>
-        	<p:dataTable widgetVar="bookingTable"
-				id="bookingTable" var="booking"
+        </p:tab>
+        <p:tab title="All bookings between id 100 and 1000">
+        	<h:form>
+        	<p:dataTable label="Dsad" widgetVar="bookingTable2"
+				id="bookingTable2" var="booking"
 				value="#{bookingController.getBookingsInRange()}"
 				reflow="true" rows="20" paginator="true">
 				<p:column headerText="BookingId">
@@ -61,8 +66,67 @@
 				</p:column>
 				
 			</p:dataTable>	
-        </h:form>
+        </h:form>    
+        </p:tab>
+        <p:tab title="Choose wich range :D">
+        	<h2> Choose the start and end for the range</h2>
+        	<p:panelGrid columns="2">
+        		<p:outputPanel id="auswahl">
+        			<p:panelGrid columns = "1">
+				        <p:outputLabel value="Start:"/>
+				        <p:inputText id="start" value="#{bookingRangeController.from}" />
+				        <p:slider for="start" value="#{bookingRangeController.from}" minValue="0" maxValue="4000000">
+				        	<p:ajax event="slideEnd" 
+				        			process=""
+				        			listener="#{bookingRangeController.reloadBookingsInRange()}"
+				        			update="bookings1 results"
+				        			 />
+				        </p:slider>
+				        <p:outputLabel value="End:"/>
+				        <h:inputText id="end" value="#{bookingRangeController.to}">
+				        </h:inputText>
+				        <p:slider for="end" value="#{bookingRangeController.to}" minValue="0" maxValue="4000000">
+				        	<p:ajax event="slideEnd" 
+				        			process=""
+				        			listener="#{bookingRangeController.reloadBookingsInRange()}"
+				        			update="bookings1 results"
+				        			/>
+						</p:slider> 
+						<p:panelGrid columns="2">
+							<p:outputLabel value="Results: "/>
+							<p:outputLabel id="results" value="#{bookingRangeController.countResults()}"/>
+						</p:panelGrid>
+        			</p:panelGrid>
+        		</p:outputPanel>
+        		<p:outputPanel>
+        			<p:dataTable widgetVar="bookings1"
+						id="bookings1" var="booking"
+						value="#{bookingRangeController.bookingInRange}"
+						reflow="true" rows="20" paginator="true">
+						<p:column headerText="BookingId">
+							<h:outputText value="#{booking.bookingId}" />
+						</p:column>
+						<p:column headerText="FlightId">
+							<h:outputText value="#{booking.flight.flightId}" />
+							
+						</p:column>
+						<p:column headerText="Price">
+							<h:outputText value="#{booking.price}" />
+						</p:column>
+						<p:column headerText="Passenger">
+							<h:outputText value="#{booking.passenger.passengerId}" />
+						</p:column>
+						
+						<p:column headerText="Seat">
+							<h:outputText value="#{booking.seat}" />
+						</p:column>
+					</p:dataTable>
+        		</p:outputPanel>
+        	</p:panelGrid>
+        </p:tab>
+    </p:accordionPanel>
         
+        </h:form>
         
     </ui:define>
 </ui:composition>
