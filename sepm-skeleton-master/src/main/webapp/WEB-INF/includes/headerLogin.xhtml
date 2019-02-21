@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<body>
+	<ui:composition>
+		<h:form>
+			<p:menubar>
+				<p:menuitem value="Help" oncomplete="PF('pfHelpDialog').show()" />
+			</p:menubar>
+		</h:form>
+		<h:form id="dlgHelp">
+			<p:dialog header="Help-Window" id="helpDialog"
+				widgetVar="pfHelpDialog" modal="true" showEffect="fade"
+				hideEffect="fade" resizable="false">
+				<p:outputPanel>
+					<br><h1>
+						<h:outputText value="No escape" />
+					</h1></br>
+					<h2>
+						<br><a href="nope.xhtml">Further help</a></br>
+
+						<br> <p:commandLink onclick="PF('pfHelpDialog').hide()">
+								cancel
+						</p:commandLink> </br>
+					</h2>
+
+				</p:outputPanel>
+
+			</p:dialog>
+		</h:form>
+
+	</ui:composition>
+</body>
+</html>
+
