@@ -22,3 +22,18 @@ https://www.eclipse.org/webtools/dali/docs/3.2/user_guide/tasks006.htm
 
 HTML Template Greefie
 https://www.drweb.de/kostenlose-hochwertige-xhtml-css-templates/
+
+Entity Manager for custom queries
+https://stackoverflow.com/questions/11173974/different-ways-of-getting-the-entitymanager
+-> i learned here, an entity Manager can be autowired!
+
+Primefaces Slider does not cal setter
+https://stackoverflow.com/questions/13511711/primefaces-slider-does-not-call-setter
+-> for me it helped to write process="" to the ajax, then it works
+
+Primefaces showcase
+https://www.primefaces.org/showcase/index.xhtml
+
+How to write queries with the @Query annotation and parameters of the method
+https://www.petrikainulainen.net/programming/spring-framework/spring-data-jpa-tutorial-three-custom-queries-with-query-methods/
+-> @Query Annotation is the interesting part 
