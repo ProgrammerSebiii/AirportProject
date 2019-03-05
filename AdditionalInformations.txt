@@ -1,0 +1,10 @@
+Here i collect my useful informations about the airport project
+
+About DevTools
+To run the project with DevTools Java8 should be used. With 9 to 11 there seems to be problems at running the application.
+Don't understand why but switching from 11 to 8 solved the issue that the app couldn't be started with the devtools dependency, 
+without that dependency there wasn't a problem at running.
+
+SpringBoot version
+Version 1.5.8.RELEASE is used, the newest version (2.1.3.RELEASE)won't work here. There seems to be a problem that a 2.x.x version 
+needs an other project structure or additional configuration files.
