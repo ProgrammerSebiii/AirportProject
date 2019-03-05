@@ -41,3 +41,6 @@ https://www.petrikainulainen.net/programming/spring-framework/spring-data-jpa-tu
 Automatic restart on changes in classpath
 https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html
 -> -Dfork as VM-argument at the run goal is not allowed if you want auto restart, therefore if the application must be closed and restarted complete use for example TCPView to end the task of port 8080, after that eclipse won't have a problem with rerunnig
+
+Solving problems with devtools
+https://dzone.com/articles/spring-boot-application-live-reload-hot-swap-with
